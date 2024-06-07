@@ -1,33 +1,27 @@
-import BookCollection from './bookCollection.js';
-import Book from './book.js';
 
-const bookCollection = new BookCollection();
+const listLink = document.querySelector('a[href="#index.html"]');
+const addLink = document.querySelector('a[href="#add.html"]');
+const contactLink = document.querySelector('a[href="#contact.html"]');
+const aboutSection = document.getElementById('about');
+const addBookPage = document.getElementById('add-book-page');
+const contactSection = document.querySelector('.section');
 
-export const displayBooks = () => {
-  const bookList = document.querySelector('#book-list');
-  bookList.innerHTML = '';
-  bookCollection.books.forEach((book, index) => {
-    const bookItem = document.createElement('div');
-    bookItem.innerHTML = `
-      <p>"${book.title}" by ${book.author}</p>
-      <button data-index="${index}" class="remove-btn">Remove</button>
-    `;
-    bookList.appendChild(bookItem);
-  });
-};
+listLink.addEventListener('click', () => {
+    aboutSection.classList.add('active');
+    addBookPage.classList.remove('active');
+    contactSection.classList.remove('active');
+});
 
-export const addBookToList = () => {
-    const title = document.querySelector('#title').value;
-    const author = document.querySelector('#author').value;
-    const book = new Book(title, author);
-    bookCollection.addBook(book);
-    displayBooks();
-  };
-  
-  export const removeBookFromList = (e) => {
-    if (e.target.classList.contains('remove-btn')) {
-      const index = e.target.getAttribute('data-index');
-      bookCollection.removeBook(index);
-      displayBooks();
-    }
-  };
+addLink.addEventListener('click', () => {
+    aboutSection.classList.remove('active');
+    addBookPage.classList.add('active');
+    contactSection.classList.remove('active');
+});
+
+contactLink.addEventListener('click', () => {
+  aboutSection.classList.remove('active');
+  addBookPage.classList.remove('active');
+  contactSection.classList.add('active');
+});
+
+
