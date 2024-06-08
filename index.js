@@ -1,7 +1,10 @@
-
+import { DateTime } from "./modules/luxon.js";
 
 document.addEventListener('DOMContentLoaded', () => {
-    displayDate();
+    const date = document.getElementById('date');
+   setInterval(() => {
+    date.innerHTML = DateTime.now().toLocaleString(DateTime.DATETIME_MED);
+   }, 1000);
 
     const bookForm = document.getElementById('book-form');
     

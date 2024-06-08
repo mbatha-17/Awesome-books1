@@ -36,6 +36,21 @@ footer{
     text-align: center;
 }
 
+#list{
+    border: 1px solid black;
+}
+
+.bookDiv {
+    background-color: white;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .bookDiv:nth-child(odd) {
+    background-color: rgb(202, 202, 202);
+  }
+
 #text{
     border: 2px solid black;
     margin: 10px;
@@ -52,13 +67,4 @@ footer{
 
 .section{
     text-align: center;
-}
-
-.date{
-    display: block;
-    color: black;
-}
-h2{
-    text-align: center;
-    color: black;
 }
