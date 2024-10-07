@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Awesome books</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <header>
+        <h3>Awesome Books</h3>
+        <nav>
+            <a href="index.html">List</a>
+            <a href="add.html">Add new</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+    <div class="about" id="about">
+        <div id="date" class="date"></div>
+        <h1>All Awesome Books</h1>
+      </div>
+      <div class="add-book-page" id="add-book-page">
+        <h1>Add a new book</h1>
+        <form id="book-form" class="formInput">
+            <input class="book-title" type="text" name="title" id="text" placeholder="Title" required><br>
+            <input class="book-author" type="text" name="author" id="author" placeholder="Author" required><br>
+            <button type="submit" id="add">Add</button>
+        </form>
+      </div>
+    </div>
+    <footer>Copyright</footer>
+     <script src="./modules/luxon.js"></script>
+    <script src="./modules/book.js"></script>
+    <script src="./modules/display.js"></script>
+    <script type="module" src="index.js"></script>
+</body>
+</html>
